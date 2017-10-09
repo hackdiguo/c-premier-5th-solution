@@ -1,0 +1,29 @@
+#include <iostream>
+#include "Sales_item.h"
+
+using namespace std;
+
+int main()
+{  
+   Sales_item ii;
+  if(std::cin >> ii ){
+      int cn = 1; Sales_item ic;
+      while(std::cin >> ic){
+          if(ii.isbn() == ic.isbn()){
+              ++cn;
+          }
+          else{
+              std::cout << "there are " << cn << " books with isbn" << ii.isbn()<< std::endl;
+              ii = ic;
+              cn = 1;
+          }
+      }
+     std::cout << "there are " << cn << " books with isbn" << ii.isbn()<< std::endl;
+       
+   }
+  else{
+      std::cerr << " no books?" <<std::endl;
+  }
+  return 0;
+}
+
